@@ -1,0 +1,20 @@
+{
+  "config": "baseline_tfidf",
+  "split": "dev",
+  "model": "openai/gpt-oss-120b",
+  "params": {
+    "max_searches": 3,
+    "top_k": 3,
+    "budget": 800
+  },
+  "total_cases": 17,
+  "answered": 5,
+  "abstain": 11,
+  "error": 1,
+  "avg_search_calls": 1,
+  "median_ms": 2532.54,
+  "total_seconds": 85.23,
+  "input_tokens": 16736,
+  "output_tokens": 6060,
+  "estimated_cost_usd": 0.020171
+}

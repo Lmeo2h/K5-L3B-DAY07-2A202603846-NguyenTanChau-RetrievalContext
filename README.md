@@ -31,3 +31,29 @@ Index một tài liệu thực tế từ **100 trang** có bảng, ảnh và bi�
 ![Các bước thử nghiệm trên dev và đánh giá trên test](assets/experiment-loop.svg)
 
 Nộp code, cách chạy, cấu hình, benchmark, trace và [báo cáo](report/individual/MSSV_HoTen.md). Thời gian ở [checkpoints](CHECKPOINTS.md) là gợi ý, có thể điều chỉnh theo lớp và phạm vi thử nghiệm.
+
+## Hướng dẫn chạy & tái lập (Nguyễn Tấn Châu — 2A202603846)
+
+1. **Cấu hình môi trường:** Tạo file `.env` ở thư mục gốc với `GROQ_API_KEY=<your-key>` (hoặc `GEMINI_API_KEY`). Vector store Day 6 nằm tại `S:\Lab6\K5-L3-Day06-DataIngestionEngineering\data\chroma_db` (collection `strategy_b`, embedding `BAAI/bge-m3`).
+2. **Chạy Unit Test (offline):**
+   ```bash
+   python -m unittest discover -s tests -v
+   ```
+3. **Xuất dữ liệu & chuẩn hóa benchmark từ Day 6 (24 câu: 17 dev / 7 test):**
+   ```bash
+   python src/day6_adapter.py
+   ```
+4. **Đánh giá Retrieval trên `dev` và `test`:**
+   ```bash
+   python src/eval_retrieval.py --split dev
+   python src/eval_retrieval.py --split test --skip-rewrite
+   ```
+5. **Chạy Agent thật (`openai/gpt-oss-120b` qua Groq) & tổng hợp metrics:**
+   ```bash
+   python src/agent_runner.py --config baseline_tfidf --split dev --provider groq
+   python src/agent_runner.py --config improved_hybrid_neighbor --split dev --provider groq
+   python src/agent_runner.py --config baseline_tfidf --split test --provider groq
+   python src/agent_runner.py --config improved_hybrid_neighbor --split test --provider groq
+   python starter/agent_metrics.py --cases data/day6/cases.json --traces results/agent/test/improved_hybrid_neighbor/traces.json --reviews results/agent/test/improved_hybrid_neighbor/reviews.json --split test --output results/agent/test/improved_hybrid_neighbor/metrics.json
+   ```
+6. **Báo cáo cá nhân:** Xem [report/individual/2A202603846_NguyenTanChau.md](report/individual/2A202603846_NguyenTanChau.md).

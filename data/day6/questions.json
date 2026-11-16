@@ -1,0 +1,297 @@
+[
+  {
+    "id": "q01",
+    "split": "dev",
+    "question": "Theo tài liệu, những yếu tố nào của prompt ảnh hưởng đến hiệu quả phản hồi của mô hình ngôn ngữ lớn?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 6,
+        "evidence": "Many aspects of your prompt affect its efficacy: the model you use, the model’s training data, the model configurations, your word-choice, style and tone, structure, and context all matter."
+      }
+    ],
+    "expected_answer": "Mô hình sử dụng, dữ liệu huấn luyện của mô hình, cấu hình mô hình, cách chọn từ ngữ, văn phong và giọng điệu, cấu trúc và ngữ cảnh.",
+    "question_type": "truc_tiep"
+  },
+  {
+    "id": "q02",
+    "split": "dev",
+    "question": "Việc giảm giới hạn độ dài đầu ra (output length) có làm mô hình viết súc tích hơn về mặt văn phong không?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 9,
+        "evidence": "Reducing the output length of the LLM doesn’t cause the LLM to become more stylistically or textually succinct in the output it creates, it just causes the LLM to stop predicting more tokens once the limit is reached."
+      }
+    ],
+    "expected_answer": "Không, việc giảm output length chỉ khiến mô hình dừng dự đoán thêm token khi chạm giới hạn chứ không làm câu văn súc tích hơn về mặt phong cách.",
+    "question_type": "truc_tiep"
+  },
+  {
+    "id": "q03",
+    "split": "dev",
+    "question": "Khi đặt temperature bằng 0, mô hình có luôn trả về cùng một kết quả trong mọi trường hợp không, và ngoại lệ nào được nêu?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 10,
+        "evidence": "deterministic: the highest probability token is always selected (though note that if two tokens have the same highest predicted probability, depending on how tiebreaking is implemented you may not always get the same output with temperature 0)."
+      }
+    ],
+    "expected_answer": "Không hoàn toàn; nếu hai token có xác suất dự đoán cao nhất bằng nhau, kết quả có thể khác nhau tùy theo cách cài đặt cơ chế tiebreaking.",
+    "question_type": "dieu_kien_ngoai_le"
+  },
+  {
+    "id": "q04",
+    "split": "dev",
+    "question": "Khi thiết lập temperature bằng 0, vai trò của top-K và top-P trong quá trình lấy mẫu sẽ thay đổi như thế nào?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 12,
+        "evidence": "If you set temperature to 0, top-K and top-P become irrelevant–the most probable token becomes the next token predicted."
+      }
+    ],
+    "expected_answer": "Top-K và top-P trở nên không còn tác dụng (irrelevant) vì token có xác suất cao nhất luôn được chọn làm token tiếp theo.",
+    "filter": {
+      "section": "LLM Output Configuration"
+    },
+    "question_type": "dieu_kien_ngoai_le"
+  },
+  {
+    "id": "q05",
+    "split": "dev",
+    "question": "Bộ tham số khởi đầu cân bằng giữa tính mạch lạc và mức độ sáng tạo vừa phải được khuyến nghị trong tài liệu gồm những giá trị nào?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 12,
+        "evidence": "As a general starting point, a temperature of .2, top-P of .95, and top-K of 30 will give you relatively coherent results that can be creative but not excessively so."
+      }
+    ],
+    "expected_answer": "Temperature 0.2, top-P 0.95 và top-K 30.",
+    "question_type": "dien_dat_lai"
+  },
+  {
+    "id": "q06",
+    "split": "dev",
+    "question": "Zero-shot prompting là loại prompt như thế nào và gồm những thành phần gì?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 13,
+        "evidence": "A zero-shot5 prompt is the simplest type of prompt. It only provides a description of a task and some text for the LLM to get started with."
+      }
+    ],
+    "expected_answer": "Là dạng prompt đơn giản nhất, chỉ cung cấp mô tả nhiệm vụ và văn bản đầu vào cho LLM bắt đầu xử lý mà không kèm ví dụ minh họa.",
+    "question_type": "truc_tiep"
+  },
+  {
+    "id": "q07",
+    "split": "dev",
+    "question": "Yêu cầu mô hình trả về kết quả ở định dạng JSON giúp giải quyết vấn đề gì về cấu trúc và độ tin cậy của đầu ra?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 21,
+        "evidence": "by prompting for a JSON format it forces the model to create a structure and limit hallucinations."
+      }
+    ],
+    "expected_answer": "Ép mô hình tạo dữ liệu theo cấu trúc định sẵn và hạn chế hiện tượng ảo giác (hallucinations).",
+    "question_type": "dien_dat_lai"
+  },
+  {
+    "id": "q08",
+    "split": "dev",
+    "question": "Kỹ thuật Step-back prompting cải thiện hiệu năng của LLM theo quy trình nào?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 25,
+        "evidence": "Step-back8 prompting is a technique for improving the performance by prompting the LLM to first consider a general question related to the specific task at hand, and then feeding the answer to that general question into a subsequent prompt for the specific task."
+      }
+    ],
+    "expected_answer": "Yêu cầu LLM xem xét một câu hỏi tổng quát liên quan đến nhiệm vụ trước, sau đó đưa câu trả lời tổng quát đó vào prompt tiếp theo để giải quyết bài toán cụ thể.",
+    "filter": {
+      "section": "Prompting Techniques"
+    },
+    "question_type": "truc_tiep"
+  },
+  {
+    "id": "q09",
+    "split": "dev",
+    "question": "Vì sao nên kết hợp Chain of Thought (CoT) với few-shot prompting đối với các tác vụ phức tạp?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 29,
+        "evidence": "You can combine it with few-shot prompting to get better results on more complex tasks that require reasoning before responding as it’s a challenge with a zero-shot chain of thought."
+      }
+    ],
+    "expected_answer": "Để đạt kết quả tốt hơn trên các tác vụ phức tạp đòi hỏi suy luận trước khi trả lời, vốn là thách thức với zero-shot CoT.",
+    "question_type": "truc_tiep"
+  },
+  {
+    "id": "q10",
+    "split": "dev",
+    "question": "Self-consistency khắc phục nhược điểm gì của Chain of Thought truyền thống bằng cách nào?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 32,
+        "evidence": "However CoT uses a simple ‘greedy decoding’ strategy, limiting its effectiveness. Self-consistency11 combines sampling and majority voting to generate diverse reasoning paths and select the most consistent answer."
+      }
+    ],
+    "expected_answer": "Khắc phục hạn chế của chiến lược greedy decoding trong CoT bằng cách kết hợp lấy mẫu (sampling) và bỏ phiếu đa số (majority voting) trên nhiều luồng suy luận.",
+    "question_type": "dien_dat_lai"
+  },
+  {
+    "id": "q11",
+    "split": "dev",
+    "question": "Mô hình ReAct (Reason and Act) kết hợp những thành phần nào để giúp LLM thực hiện tác vụ phức tạp?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 37,
+        "evidence": "Reason and act (ReAct) [10]13 prompting is a paradigm for enabling LLMs to solve complex tasks using natural language reasoning combined with external tools (search, code interpreter etc.) allowing the LLM to perform certain actions, such as interacting with external APIs to retrieve information which is a first step towards agent modeling."
+      }
+    ],
+    "expected_answer": "Kết hợp suy luận bằng ngôn ngữ tự nhiên với các công cụ bên ngoài (như tìm kiếm, trình thông dịch code, API) để thực hiện hành động và truy xuất thông tin.",
+    "question_type": "truc_tiep"
+  },
+  {
+    "id": "q12",
+    "split": "dev",
+    "question": "Chu trình lặp cốt lõi của phương pháp Automatic Prompt Engineering (APE) diễn ra như thế nào?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 40,
+        "evidence": "You will prompt a model to generate more prompts. Evaluate them, possibly alter the good ones. And repeat."
+      }
+    ],
+    "expected_answer": "Dùng mô hình sinh thêm nhiều prompt, đánh giá chúng, chỉnh sửa các prompt tốt rồi lặp lại.",
+    "question_type": "dien_dat_lai"
+  },
+  {
+    "id": "q13",
+    "split": "dev",
+    "question": "Khi yêu cầu sinh mã Python trong Language Studio trên Vertex AI, người dùng cần thao tác bắt buộc nào để tránh mất định dạng thụt lề?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 48,
+        "evidence": "to click on the ‘Markdown’ button. Otherwise you will receive plain text which is missing the proper indenting of lines, which is important for running"
+      }
+    ],
+    "expected_answer": "Phải nhấn vào nút 'Markdown', nếu không sẽ nhận về văn bản thuần bị mất thụt lề dòng cần thiết để chạy mã.",
+    "filter": {
+      "section": "Code Prompting"
+    },
+    "question_type": "dieu_kien_ngoai_le"
+  },
+  {
+    "id": "q14",
+    "split": "dev",
+    "question": "Trong trường hợp nào các ràng buộc (constraints) vẫn giữ vai trò hữu ích dù tài liệu khuyên ưu tiên hướng dẫn tích cực?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 57,
+        "evidence": "Constraints are still valuable but in certain situations. To prevent the model from generating harmful or biased content or when a strict output format or style is needed."
+      }
+    ],
+    "expected_answer": "Khi cần ngăn mô hình sinh nội dung độc hại/thiên lệch hoặc khi yêu cầu nghiêm ngặt một định dạng hay phong cách đầu ra cụ thể.",
+    "question_type": "dieu_kien_ngoai_le"
+  },
+  {
+    "id": "q15",
+    "split": "dev",
+    "question": "Theo quy tắc kinh nghiệm (rule of thumb) trong tài liệu, nên bắt đầu thử nghiệm với bao nhiêu ví dụ few-shot?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 60,
+        "evidence": "A good rule of thumb is to start with 6 few shot examples and start testing the accuracy from there."
+      }
+    ],
+    "expected_answer": "Nên bắt đầu với 6 ví dụ few-shot rồi kiểm thử độ chính xác từ đó.",
+    "question_type": "truc_tiep"
+  },
+  {
+    "id": "q16",
+    "split": "test",
+    "question": "Tài liệu này tập trung hướng dẫn viết prompt cho mô hình Gemini qua môi trường nào thay vì giao diện chatbot thông thường, và vì lý do gì?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 7,
+        "evidence": "this whitepaper focuses on writing prompts for the Gemini model within Vertex AI or by using the API, because by prompting the model directly you will have access to the configuration such as temperature etc."
+      }
+    ],
+    "expected_answer": "Tập trung vào Gemini trong Vertex AI hoặc qua API vì khi gọi trực tiếp mô hình, người dùng có thể truy cập các cấu hình như temperature.",
+    "question_type": "truc_tiep"
+  },
+  {
+    "id": "q17",
+    "split": "test",
+    "question": "Tree of Thoughts (ToT) tổng quát hóa cách tiếp cận của Chain of Thought theo hướng nào?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 36,
+        "evidence": "It generalizes the concept of CoT prompting because it allows LLMs to explore multiple different reasoning paths simultaneously, rather than just following a single linear chain of thought."
+      }
+    ],
+    "expected_answer": "Cho phép LLM khám phá đồng thời nhiều nhánh suy luận khác nhau thay vì chỉ đi theo một chuỗi suy luận tuyến tính duy nhất.",
+    "question_type": "dien_dat_lai"
+  },
+  {
+    "id": "q18",
+    "split": "test",
+    "question": "Dù thứ tự các ví dụ few-shot thường không quan trọng, nhưng đối với bài toán phân loại (classification) cần lưu ý điều gì để tránh overfitting?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 59,
+        "evidence": "Generally speaking, the order of your few-shots examples should not matter much. However, when doing classification tasks, make sure you mix up the possible response classes in the few shot examples. This is because you might otherwise be overfitting to the specific order of the examples."
+      }
+    ],
+    "expected_answer": "Cần xáo trộn (mix up) các lớp nhãn phản hồi trong các ví dụ few-shot để mô hình không học vẹt thứ tự ví dụ.",
+    "filter": {
+      "section": "Best Practices"
+    },
+    "question_type": "dieu_kien_ngoai_le"
+  },
+  {
+    "id": "q19",
+    "split": "test",
+    "question": "Việc cung cấp JSON Schema cho dữ liệu đầu vào giúp ích gì cho LLM khi xử lý thông tin?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 62,
+        "evidence": "By providing a schema, you give the LLM a clear blueprint of the data it should expect, helping it focus its attention on the relevant information and reducing the risk of misinterpreting the input."
+      }
+    ],
+    "expected_answer": "Cung cấp bản thiết kế rõ ràng về dữ liệu đầu vào, giúp LLM tập trung vào thông tin liên quan và giảm nguy cơ hiểu sai dữ liệu.",
+    "filter": {
+      "section": "Best Practices"
+    },
+    "question_type": "truc_tiep"
+  },
+  {
+    "id": "q20",
+    "split": "test",
+    "question": "Vì sao khi áp dụng Chain of Thought (CoT) bắt buộc phải đặt câu trả lời sau phần lập luận (reasoning)?",
+    "gold": [
+      {
+        "source_id": "google-prompt-engineering-2025",
+        "page": 64,
+        "evidence": "For CoT prompting, putting the answer after the reasoning is required because the generation of the reasoning changes the tokens that the model gets when it predicts the final answer."
+      }
+    ],
+    "expected_answer": "Vì quá trình sinh phần lập luận làm thay đổi các token mà mô hình nhận được khi dự đoán câu trả lời cuối cùng.",
+    "question_type": "dieu_kien_ngoai_le"
+  }
+]

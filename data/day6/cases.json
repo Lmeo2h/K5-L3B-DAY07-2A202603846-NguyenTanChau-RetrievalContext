@@ -1,0 +1,193 @@
+[
+  {
+    "id": "q01",
+    "split": "dev",
+    "question": "Theo tài liệu, những yếu tố nào của prompt ảnh hưởng đến hiệu quả phản hồi của mô hình ngôn ngữ lớn?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q02",
+    "split": "dev",
+    "question": "Việc giảm giới hạn độ dài đầu ra (output length) có làm mô hình viết súc tích hơn về mặt văn phong không?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q03",
+    "split": "dev",
+    "question": "Khi đặt temperature bằng 0, mô hình có luôn trả về cùng một kết quả trong mọi trường hợp không, và ngoại lệ nào được nêu?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q04",
+    "split": "dev",
+    "question": "Khi thiết lập temperature bằng 0, vai trò của top-K và top-P trong quá trình lấy mẫu sẽ thay đổi như thế nào?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "filter": {
+      "section": "LLM Output Configuration"
+    }
+  },
+  {
+    "id": "q05",
+    "split": "dev",
+    "question": "Bộ tham số khởi đầu cân bằng giữa tính mạch lạc và mức độ sáng tạo vừa phải được khuyến nghị trong tài liệu gồm những giá trị nào?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q06",
+    "split": "dev",
+    "question": "Zero-shot prompting là loại prompt như thế nào và gồm những thành phần gì?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q07",
+    "split": "dev",
+    "question": "Yêu cầu mô hình trả về kết quả ở định dạng JSON giúp giải quyết vấn đề gì về cấu trúc và độ tin cậy của đầu ra?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q08",
+    "split": "dev",
+    "question": "Kỹ thuật Step-back prompting cải thiện hiệu năng của LLM theo quy trình nào?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "filter": {
+      "section": "Prompting Techniques"
+    }
+  },
+  {
+    "id": "q09",
+    "split": "dev",
+    "question": "Vì sao nên kết hợp Chain of Thought (CoT) với few-shot prompting đối với các tác vụ phức tạp?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q10",
+    "split": "dev",
+    "question": "Self-consistency khắc phục nhược điểm gì của Chain of Thought truyền thống bằng cách nào?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q11",
+    "split": "dev",
+    "question": "Mô hình ReAct (Reason and Act) kết hợp những thành phần nào để giúp LLM thực hiện tác vụ phức tạp?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q12",
+    "split": "dev",
+    "question": "Chu trình lặp cốt lõi của phương pháp Automatic Prompt Engineering (APE) diễn ra như thế nào?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q13",
+    "split": "dev",
+    "question": "Khi yêu cầu sinh mã Python trong Language Studio trên Vertex AI, người dùng cần thao tác bắt buộc nào để tránh mất định dạng thụt lề?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "filter": {
+      "section": "Code Prompting"
+    }
+  },
+  {
+    "id": "q14",
+    "split": "dev",
+    "question": "Trong trường hợp nào các ràng buộc (constraints) vẫn giữ vai trò hữu ích dù tài liệu khuyên ưu tiên hướng dẫn tích cực?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q15",
+    "split": "dev",
+    "question": "Theo quy tắc kinh nghiệm (rule of thumb) trong tài liệu, nên bắt đầu thử nghiệm với bao nhiêu ví dụ few-shot?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q16",
+    "split": "test",
+    "question": "Tài liệu này tập trung hướng dẫn viết prompt cho mô hình Gemini qua môi trường nào thay vì giao diện chatbot thông thường, và vì lý do gì?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q17",
+    "split": "test",
+    "question": "Tree of Thoughts (ToT) tổng quát hóa cách tiếp cận của Chain of Thought theo hướng nào?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "q18",
+    "split": "test",
+    "question": "Dù thứ tự các ví dụ few-shot thường không quan trọng, nhưng đối với bài toán phân loại (classification) cần lưu ý điều gì để tránh overfitting?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "filter": {
+      "section": "Best Practices"
+    }
+  },
+  {
+    "id": "q19",
+    "split": "test",
+    "question": "Việc cung cấp JSON Schema cho dữ liệu đầu vào giúp ích gì cho LLM khi xử lý thông tin?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer",
+    "filter": {
+      "section": "Best Practices"
+    }
+  },
+  {
+    "id": "q20",
+    "split": "test",
+    "question": "Vì sao khi áp dụng Chain of Thought (CoT) bắt buộc phải đặt câu trả lời sau phần lập luận (reasoning)?",
+    "answerable": true,
+    "expected_behavior": "search_and_answer"
+  },
+  {
+    "id": "u01",
+    "split": "dev",
+    "question": "Tài liệu có quy định cụ thể bảng giá (pricing) theo mỗi triệu token hoặc giới hạn tốc độ (rate limit) của API Gemini trên Vertex AI không?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Tài liệu Prompt Engineering (68 trang) có nhắc tới Gemini và Vertex AI Studio nhưng không chứa bảng giá theo token hay thông số rate limit API.",
+    "verification_method": "Tìm kiếm toàn văn trên 68 trang file 'Prompt Engineering.pdf' bằng PyMuPDF với các từ khóa 'pricing', 'rate limit': 0 kết quả."
+  },
+  {
+    "id": "u02",
+    "split": "dev",
+    "question": "Tài liệu có hướng dẫn cách sử dụng kỹ thuật RLHF (Reinforcement Learning from Human Feedback) hoặc DPO (Direct Preference Optimization) để tinh chỉnh mô hình ngôn ngữ lớn không?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Tài liệu có đề cập ngắn tới fine-tuning/LoRA nhưng không trình bày hoặc hướng dẫn kỹ thuật RLHF hay DPO.",
+    "verification_method": "Tìm kiếm toàn văn trên 68 trang file 'Prompt Engineering.pdf' bằng PyMuPDF với các từ khóa 'rlhf', 'reinforcement learning from human feedback', 'dpo', 'direct preference optimization': 0 kết quả."
+  },
+  {
+    "id": "u03",
+    "split": "test",
+    "question": "Tài liệu có trình bày giao thức Model Context Protocol (MCP) hoặc kiến trúc GraphRAG để kết hợp đồ thị tri thức vào quá trình truy xuất không?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Tài liệu có đề cập tới ReAct và tools nhưng không nhắc đến giao thức Model Context Protocol (MCP) hay kiến trúc GraphRAG.",
+    "verification_method": "Tìm kiếm toàn văn trên 68 trang file 'Prompt Engineering.pdf' bằng PyMuPDF với các từ khóa 'model context protocol', 'graphrag': 0 kết quả."
+  },
+  {
+    "id": "u04",
+    "split": "test",
+    "question": "Tài liệu có nêu các chỉ số đánh giá hệ thống RAG như RAGAS hay phương pháp xếp hạng từ khóa BM25 không?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Tài liệu tập trung vào kỹ thuật viết prompt và cấu hình đầu ra LLM, không đề cập tới bộ chỉ số RAGAS hay thuật toán BM25.",
+    "verification_method": "Tìm kiếm toàn văn trên 68 trang file 'Prompt Engineering.pdf' bằng PyMuPDF với các từ khóa 'ragas', 'bm25': 0 kết quả."
+  }
+]
